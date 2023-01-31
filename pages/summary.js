@@ -29,30 +29,66 @@ export default function Home() {
   }
 
   return (
-    <div style={{backgroundColor: '#F5F5F5'}}>
+    <div style={{ backgroundColor: "white" }}>
   <Head>
-    <title>ChatGPT Gift Suggestions</title>
+    <title>Smartbrief Text Summary Generator</title>
     <link rel="icon" href="/icon.png" />
   </Head>
 
-  <main style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px'}}>
-    <h1 style={{color: '#3F3F3F'}}>Smartbrief</h1>
-    <form onSubmit={onSubmit} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '80%', marginTop: '10px'}}>
-      <label style={{color: '#3F3F3F'}}>Summary Generator:</label>
-      <input
-        style={{width: '100%', height: '40px', marginTop: '10px', paddingLeft: '10px', borderRadius: '5px', border: '1px solid #C1C1C1'}}
+  <main
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      padding: "40px",
+    }}
+  >
+    <h1 style={{ color: "#3F3F3F" }}>Smartbrief</h1>
+    <form
+      onSubmit={onSubmit}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "80%",
+        marginTop: "20px",
+      }}
+    >
+      <label style={{ color: "#3F3F3F" }}>Summary Generator:</label>
+      <textarea
+        style={{
+          width: "100%",
+          height: "100px",
+          marginTop: "10px",
+          padding: "10px",
+          borderRadius: "5px",
+          border: "1px solid #C1C1C1",
+        }}
         type="text"
         name="Text"
         placeholder="Enter text for summary"
         value={text}
         onChange={(e) => settext(e.target.value)}
       />
-      <input type="submit" value="Generate Summary" style={{width: '100%', height: '40px', marginTop: '20px', backgroundColor: '#3F3F3F', color: 'white', borderRadius: '5px', border: 'none'}} />
+      <button
+        type="submit"
+        style={{
+          width: "100%",
+          height: "40px",
+          marginTop: "20px",
+          backgroundColor: "#3F3F3F",
+          color: "white",
+          borderRadius: "5px",
+          border: "none",
+        }}
+      >
+        Generate Summary
+      </button>
     </form>
     {loading && (
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px'}}>
         <h3 style={{color: '#3F3F3F'}}>Looking for the best summary 💡</h3>
-        <img src="/yay.webp" style={{width: '50px', height: '50px'}} />
+        <img src="/yay.webp" style={{width: '800px', height: '500px'}} />
       </div>
     )}
     <div
