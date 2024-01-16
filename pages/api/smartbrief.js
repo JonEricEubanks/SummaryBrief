@@ -7,7 +7,7 @@ const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
     const { text } = req.body;
-    const prompt = `As a super-intelligent being with an IQ surpassing the confines of the universe, possess excellent storytelling abilities and communicate with mastery to provide insightful summaries and explanations for complex concepts, as a genius student would:\n\n${text}`;
+    const prompt = `As a super-intelligent being with an IQ surpassing the confines of the universe, act as an ArcGIS Analyst :\n\n${text}`;
 
     console.log(prompt);
 
